@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MTR — Rugged and Refined Haircare</title>
+<meta name="description" content="Treatment and styling products built by barbers for everyday wear. Born in Queens, bred in Brooklyn. Coming to your barber shop winter 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Sans+3:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F4EBDC;
+  --forest:#16382E;
+  --tan:#C6B08A;
+  --ink:#101010;
+  --muted:#5B5245;
+  --display:'Archivo',"Helvetica Neue",Arial,sans-serif;
+  --body:'Source Sans 3',Georgia,serif;
+  --pad:clamp(1.75rem,7vw,7rem);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  min-height:100svh;
+}
+
+/* ===== stage: fills everything above the band ===== */
+.stage{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(2.5rem,6vh,5rem) var(--pad);
+}
+.inner{max-width:1100px;width:100%}
+
+/* ===== wordmark ===== */
+.wordmark{
+  font-family:var(--display);
+  font-weight:800;
+  font-size:clamp(3.4rem,min(13vw,18vh),8.5rem);
+  line-height:.82;
+  letter-spacing:-.03em;
+  color:var(--forest);
+  margin:0;
+}
+.tagline{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(.62rem,1.6vw,.8rem);
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin:clamp(.8rem,1.6vh,1.2rem) 0 0;
+}
+
+/* ===== rule ===== */
+.rule{
+  width:64px;
+  height:2px;
+  background:var(--forest);
+  margin:clamp(1.75rem,4vh,2.75rem) 0;
+}
+
+/* ===== headline ===== */
+h1{
+  font-family:var(--display);
+  font-weight:800;
+  text-transform:uppercase;
+  font-size:clamp(1.9rem,min(6.5vw,9vh),4.4rem);
+  line-height:.98;
+  letter-spacing:-.02em;
+  margin:0 0 clamp(.9rem,2vh,1.4rem);
+  text-wrap:balance;
+}
+.sub{
+  font-size:clamp(1rem,min(2.2vw,2.6vh),1.25rem);
+  color:var(--muted);
+  max-width:44ch;
+  margin:0;
+}
+
+/* ===== bottom band ===== */
+.band{
+  background:var(--forest);
+  color:var(--cream);
+  text-align:center;
+  padding:clamp(1.1rem,2.6vh,1.6rem) var(--pad);
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(.66rem,1.7vw,.85rem);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  flex-shrink:0;
+}
+
+/* ===== load sequence ===== */
+.fade{opacity:0;transform:translateY(14px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.fade:nth-child(1){animation-delay:.05s}
+.fade:nth-child(2){animation-delay:.18s}
+.fade:nth-child(3){animation-delay:.28s}
+.fade:nth-child(4){animation-delay:.38s}
+.fade:nth-child(5){animation-delay:.5s}
+.band{opacity:0;animation:rise .9s cubic-bezier(.2,.7,.2,1) .68s forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  .fade,.band{opacity:1;transform:none;animation:none}
+}
+
+/* ===== very short viewports: tighten up ===== */
+@media (max-height:480px){
+  .rule{margin:1rem 0}
+  .sub{font-size:.95rem}
+}
+</style>
+</head>
+<body>
+
+<main class="stage">
+  <div class="inner">
+    <p class="wordmark fade">MTR</p>
+    <p class="tagline fade">Rugged and Refined Haircare</p>
+    <div class="rule fade"></div>
+    <h1 class="fade">Style, culture, &amp; science.</h1>
+    <p class="sub fade">Treatment and styling products built by barbers for everyday wear. Born in Queens, bred in Brooklyn.</p>
+  </div>
+</main>
+
+<footer class="band">Coming to your barber shop winter 2027</footer>
+
+</body>
+</html>
